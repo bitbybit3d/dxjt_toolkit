@@ -83,6 +83,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IntDir>$(SolutionDir)Library$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>osgdb_jtd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -93,6 +94,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IntDir>$(SolutionDir)Library$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>osgdb_jt</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -108,6 +110,10 @@
       <AdditionalLibraryDirectories>$(OSG_DIR)\lib;.\..\..\..\x64_v141\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>jt_toolkit.lib;osgd.lib;osgDBd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /r /q $(SolutionDir)$(Platform)\$(Configuration)\osgdb_jtd.dll $(OSG_DIR)\bin\osgPlugins-3.6.5
+xcopy /y /r /q $(SolutionDir)$(Platform)\$(Configuration)\osgdb_jtd.pdb $(OSG_DIR)\bin\osgPlugins-3.6.5</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -159,6 +165,9 @@
       <AdditionalLibraryDirectories>$(OSG_DIR)\lib;.\..\..\..\x64_v141\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>jt_toolkit.lib;osg.lib;osgDB.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /r /q $(SolutionDir)$(Platform)\$(Configuration)\osgdb_jt.dll $(OSG_DIR)\bin\osgPlugins-3.6.5</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
