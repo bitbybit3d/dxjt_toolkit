@@ -1,32 +1,32 @@
 # jt_toolkit
 
-����JT��ʽ�ļ���
+解析JT格式文件。
 
-### ���
+### 简介
 
-������Ϸֶ��㣬���� libdxjt.dll ����JT��ʽ���룬�� jt_toolkit ����� JTOpen Toolkit ת�����Ƶ���֯��ʽ��
+在设计上分二层，其中 libdxjt.dll 贴近JT格式解码，而 jt_toolkit 则类比 JTOpen Toolkit 转换类似的组织形式。
 
-������Ʒ���ײ�ʵ�� **libdxjt** �� **jt_toolkit** ����Դ������ʾ�������ǵ��÷��밸����
+个人作品，底层实现 **libdxjt** 和 **jt_toolkit** 不开源，仅演示基于它们的用法与案例。
 
-jt_toolkit ������
+jt_toolkit 依赖：
 - zlib.dll
 - liblzma.dll
 
-������棬��������׼����boost��
+代码层面，仅依赖标准库与boost。
 
-### ��������
-- ֧�ֶ�ȡ JT 8.0 - JT 10.5��ʽ���������� LSG Scene �� RangeLOD��ʾ
-- ֧�� JT 8.1 ��ʽ��д�룬��ǰ���Խ�������ʽ�� Jt2Go ����Դ�
-- ��֧�ֽ��� JT BREP Segment����û������ XT BREP Segment
-- ��ʱû�ж��̶߳�ȡ������Ҳ����Ӧ���ӳټ���
+### 功能特性
+- 支持读取 JT 8.0 - JT 10.5格式，但仅限于 LSG Scene 与 RangeLOD显示
+- 支持 JT 8.1 格式的写入，当前测试仅部件形式在 Jt2Go 里可以打开
+- 不支持解析 JT BREP Segment，更没法解析 XT BREP Segment
+- 暂时没有多线程读取能力，也并不应用延迟加载
 
 
 ### TODO
-- �������޸� JT10�汾��� Move-to-Front �������� (��߻����-1��û��ȷ����ʱӦ��Ӧ��һ��ֵ)
-- �˽� JT��ʽ�� JT_PROP_NAME �Ĺ�������ȷ������Instance��װ�������ȷд��
+- 分析并修复 JT10版本里的 Move-to-Front 解码问题 (里边会出现-1，目前没有研究清楚此时取对应的哪一个值，会导致部分JT10的文件显示不正常)
+- 了解 JT格式里 JT_PROP_NAME 的构件规则，确保带有Instance的装配可以正确写入(只影响JT格式写出)
 
 
-### �ο���Դ
+### 参考资源
 - JT-v8.1_File_Format_Reference.PDF
 - JT-v95_File_Format_Reference_Rev-D.pdf
 - ISO14306-2012 Industrial automation systems and integration - JT file format specification for 3D visualization
