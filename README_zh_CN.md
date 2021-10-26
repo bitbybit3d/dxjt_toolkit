@@ -19,7 +19,7 @@ jt_toolkit 依赖 libdxjt.dll，而 libdxjt.dll 依赖 zlib.dll 和 liblzma.dll�
 以控制台形式，打开JT文件，遍历查询它的内容
 
 ### examples/osgexamples
-项目 Plugins jt 系为OSG定制的可以读取JT文件的插件，将产生 osgdb_jtd.dll，若编译成功，会自动拷贝至 OSG 目录，但前提是
+项目 **Plugins jt** 系为OSG定制的可以读取JT文件的插件，将产生 osgdb_jtd.dll，若编译成功，会自动拷贝至 OSG 目录，但前提是
 OSG_DIR 变量有定义。
 
 项目 osgviewer_jt 仅为方便加载 jt文件用于测试。
