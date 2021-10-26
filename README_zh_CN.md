@@ -13,6 +13,18 @@ jt_toolkit 以C++ API形式，提供以下能力：
 jt_toolkit 依赖 libdxjt.dll，而 libdxjt.dll 依赖 zlib.dll 和 liblzma.dll。
 
 
+## 示例
+
+### examples/traverse
+以控制台形式，打开JT文件，遍历查询它的内容
+
+### examples/osgexamples
+项目 Plugins jt 系为OSG定制的可以读取JT文件的插件，将产生 osgdb_jtd.dll，若编译成功，会自动拷贝至 OSG 目录，但前提是
+OSG_DIR 变量有定义。
+
+项目 osgviewer_jt 仅为方便加载 jt文件用于测试。
+
+
 ## TODO
 - 分析并修复 JT10版本里的 Move-to-Front 解码问题 (里边会出现-1，目前没有研究清楚此时取对应的哪一个值，会导致部分JT10的文件显示不正常)
 - 支持多线程加载
