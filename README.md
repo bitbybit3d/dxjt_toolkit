@@ -1,5 +1,7 @@
 # jt_toolkit
 
+Author: bitbybit3d@163.com
+
 jt_toolkit is a C++ API library, it provides applications with the capablity to:
 - read a JT file (JT 8.0 - JT 10.5 format)
 - write to a JT file (saved as JT 8.1 format)
@@ -21,7 +23,7 @@ A example for read JT file.
 
 
 ### examples/osgexamples
-**Plugins jt** is a plugin for opencascade to read a JT file.
+**Plugins jt** is a plugin for openscenegraph to read a JT file.
 
 
 ## TODO

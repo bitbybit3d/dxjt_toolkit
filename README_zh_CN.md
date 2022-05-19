@@ -1,5 +1,7 @@
 # jt_toolkit
 
+Author: bitbybit3d@163.com
+
 jt_toolkit 以C++ API形式，提供以下能力：
 - 读取 JT 8.0 - JT 10.5格式 (限于LSG Segment、RangeLOD、Properties、Attributes等)
 - 以 JT8.1 个数输出至 JT 文件  (不带Instance的部件可以在Jt2Go正常打开)
