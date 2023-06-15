@@ -2,3 +2,5 @@
 
 *.vcxproj.user
 .vs/
+Libraryx64/
+x64/

@@ -19,45 +19,45 @@
 #include <osg/Material>
 #include <osgDB/Registry>
 
-#include "JtEntityFactory.h"
-#include "JtCADImporter.h"
-#include "JtTraverser.h"
+#include "DxJtEntityFactory.h"
+#include "DxJtCADImporter.h"
+#include "DxJtTraverser.h"
 
-static osg::ref_ptr<osg::Node> convertPartShape2Geode(std::shared_ptr<JtShape> partShape);
+static osg::ref_ptr<osg::Node> convertPartShape2Geode(std::shared_ptr<DxJtShape> partShape);
 static osg::ref_ptr<osg::Geometry> triangles_to_osgGeometry(const std::vector<float>& vertices, const std::vector<float>& normals, const std::vector<int>& indices);
 static osg::ref_ptr<osg::Geometry> triStripSet_to_osgGeometry(const std::vector<float>& vertices, const std::vector<float>& normals);
 
-class ConvertJtLSGNode : public JtTraverser
+class ConvertJtLSGNode : public DxJtTraverser
 {
 public:
-    ConvertJtLSGNode(std::unordered_map<std::shared_ptr<JtHierarchy>, osg::ref_ptr<osg::Group> >& mapJt2Group)
+    ConvertJtLSGNode(std::unordered_map<std::shared_ptr<DxJtHierarchy>, osg::ref_ptr<osg::Group> >& mapJt2Group)
         : m_mapJt2Node(mapJt2Group)
     {}
 
-    virtual bool preActionCallback(std::shared_ptr<JtHierarchy> CurrNode, int Level);
+    virtual bool preActionCallback(std::shared_ptr<DxJtHierarchy> CurrNode, int Level);
 
 private:
-    std::unordered_map<std::shared_ptr<JtHierarchy>, osg::ref_ptr<osg::Group> >& m_mapJt2Node;
+    std::unordered_map<std::shared_ptr<DxJtHierarchy>, osg::ref_ptr<osg::Group> >& m_mapJt2Node;
 };
 
-bool ConvertJtLSGNode::preActionCallback(std::shared_ptr<JtHierarchy> CurrNode, int Level)
+bool ConvertJtLSGNode::preActionCallback(std::shared_ptr<DxJtHierarchy> CurrNode, int Level)
 {
     std::wstring szName = CurrNode->name();
 
-    std::shared_ptr<JtTransform> attribTransf;
-    std::shared_ptr<JtMaterial>  attribMat;
+    std::shared_ptr<DxJtTransform> attribTransf;
+    std::shared_ptr<DxJtMaterial>  attribMat;
 
     int count = CurrNode->numAttribs();
     for (int i = 0; i < count; ++i)
     {
-        std::shared_ptr<JtAttrib> attrib = CurrNode->getAttrib(i);
+        std::shared_ptr<DxJtAttrib> attrib = CurrNode->getAttrib(i);
 
         // 默认仅会有一个 AttributeGeometricTransform 的属性存在
-        if (attribTransf == nullptr && attrib->typeID() == JtEntity::JtkTRANSFORM)
-            attribTransf = std::dynamic_pointer_cast<JtTransform>(attrib);
+        if (attribTransf == nullptr && attrib->typeID() == DxJtEntity::JtkTRANSFORM)
+            attribTransf = std::dynamic_pointer_cast<DxJtTransform>(attrib);
 
-        if (attribMat == nullptr && attrib->typeID() == JtEntity::JtkMATERIAL)
-            attribMat = std::dynamic_pointer_cast<JtMaterial>(attrib);
+        if (attribMat == nullptr && attrib->typeID() == DxJtEntity::JtkMATERIAL)
+            attribMat = std::dynamic_pointer_cast<DxJtMaterial>(attrib);
     }
 
     osg::ref_ptr<osg::Group> transfGroup = nullptr;
@@ -99,7 +99,7 @@ bool ConvertJtLSGNode::preActionCallback(std::shared_ptr<JtHierarchy> CurrNode, 
     m_mapJt2Node.insert(std::make_pair(CurrNode, aGroup));
 
     osg::ref_ptr<osg::Group> aParent = nullptr;
-    std::shared_ptr<JtHierarchy> parJtNode = CurrNode->parent();
+    std::shared_ptr<DxJtHierarchy> parJtNode = CurrNode->parent();
     if (parJtNode != nullptr)
     {
         auto it_find = m_mapJt2Node.find(parJtNode);
@@ -123,8 +123,8 @@ bool ConvertJtLSGNode::preActionCallback(std::shared_ptr<JtHierarchy> CurrNode, 
 
     switch (CurrNode->typeID())
     {
-    case JtEntity::JtkPART: {
-        std::shared_ptr<JtPart> pPart = std::dynamic_pointer_cast<JtPart>(CurrNode);
+    case DxJtEntity::JtkPART: {
+        std::shared_ptr<DxJtPart> pPart = std::dynamic_pointer_cast<DxJtPart>(CurrNode);
         assert(pPart != nullptr);
 
         int partNumShapeLODs = pPart->numPolyLODs();
@@ -135,7 +135,7 @@ bool ConvertJtLSGNode::preActionCallback(std::shared_ptr<JtHierarchy> CurrNode, 
 
             for (int shNum = 0; shNum < partNumShapes; ++shNum)
             {
-                std::shared_ptr<JtShape> partShape = pPart->getPolyShape(lod, shNum);
+                std::shared_ptr<DxJtShape> partShape = pPart->getPolyShape(lod, shNum);
                 if (partShape == nullptr)
                     continue;
 
@@ -149,15 +149,15 @@ bool ConvertJtLSGNode::preActionCallback(std::shared_ptr<JtHierarchy> CurrNode, 
         break;
     }
 
-    case JtEntity::JtkASSEMBLY: {
+    case DxJtEntity::JtkASSEMBLY: {
         break;
     }
 
-    case JtEntity::JtkINSTANCE: {
-        std::shared_ptr<JtInstance> pInst = std::dynamic_pointer_cast<JtInstance>(CurrNode);
+    case DxJtEntity::JtkINSTANCE: {
+        std::shared_ptr<DxJtInstance> pInst = std::dynamic_pointer_cast<DxJtInstance>(CurrNode);
         assert(pInst != nullptr);
 
-        std::shared_ptr<JtHierarchy> pJtOrig = pInst->original();
+        std::shared_ptr<DxJtHierarchy> pJtOrig = pInst->original();
         assert(pJtOrig != nullptr);
 
         auto it_find = m_mapJt2Node.find(pJtOrig);
@@ -179,16 +179,16 @@ bool ConvertJtLSGNode::preActionCallback(std::shared_ptr<JtHierarchy> CurrNode, 
 
 osg::Node* load_jt(const wchar_t *filename, const osgDB::ReaderWriter::Options* options)
 {
-    std::shared_ptr<JtCADImporter> importer = JtEntityFactory::createCADImporter();
+    std::shared_ptr<DxJtCADImporter> importer = DxJtEntityFactory::createCADImporter();
     if (importer == nullptr)
         return nullptr;
 
-    std::shared_ptr<JtHierarchy> root = importer->importJt(filename);
+    std::shared_ptr<DxJtHierarchy> root = importer->importJt(filename);
     if (root == nullptr)
         return nullptr;
 
-    std::unordered_map<std::shared_ptr<JtHierarchy>, osg::ref_ptr<osg::Group> > mapJt2Group;
-    std::shared_ptr<JtTraverser> traverser = std::shared_ptr<JtTraverser>(new ConvertJtLSGNode(mapJt2Group));
+    std::unordered_map<std::shared_ptr<DxJtHierarchy>, osg::ref_ptr<osg::Group> > mapJt2Group;
+    std::shared_ptr<DxJtTraverser> traverser = std::shared_ptr<DxJtTraverser>(new ConvertJtLSGNode(mapJt2Group));
     if (traverser)
     {
         traverser->traverseGraph(root);
@@ -204,22 +204,22 @@ osg::Node* load_jt(const wchar_t *filename, const osgDB::ReaderWriter::Options* 
 }
 
 
-osg::ref_ptr<osg::Node> convertPartShape2Geode(std::shared_ptr<JtShape> partShape)
+osg::ref_ptr<osg::Node> convertPartShape2Geode(std::shared_ptr<DxJtShape> partShape)
 {
-    std::shared_ptr<JtTransform> attribTransf;
-    std::shared_ptr<JtMaterial>  attribMat;
+    std::shared_ptr<DxJtTransform> attribTransf;
+    std::shared_ptr<DxJtMaterial>  attribMat;
 
     int count = partShape->numAttribs();
     for (int i = 0; i < count; ++i)
     {
-        std::shared_ptr<JtAttrib> attrib = partShape->getAttrib(i);
+        std::shared_ptr<DxJtAttrib> attrib = partShape->getAttrib(i);
 
         // 默认仅会有一个 AttributeGeometricTransform 的属性存在
-        if (attribTransf == nullptr && attrib->typeID() == JtEntity::JtkTRANSFORM)
-            attribTransf = std::dynamic_pointer_cast<JtTransform>(attrib);
+        if (attribTransf == nullptr && attrib->typeID() == DxJtEntity::JtkTRANSFORM)
+            attribTransf = std::dynamic_pointer_cast<DxJtTransform>(attrib);
 
-        if (attribMat == nullptr && attrib->typeID() == JtEntity::JtkMATERIAL)
-            attribMat = std::dynamic_pointer_cast<JtMaterial>(attrib);
+        if (attribMat == nullptr && attrib->typeID() == DxJtEntity::JtkMATERIAL)
+            attribMat = std::dynamic_pointer_cast<DxJtMaterial>(attrib);
     }
 
     osg::ref_ptr<osg::Group> transfGroup = nullptr;
