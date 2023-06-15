@@ -1,0 +1,4 @@
+# file types to ignore
+
+*.vcxproj.user
+.vs/

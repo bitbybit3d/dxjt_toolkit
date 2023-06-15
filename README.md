@@ -26,7 +26,13 @@ A example for read JT file.
 **Plugins jt** is a plugin for openscenegraph to read a JT file.
 
 
-## TODO
+## Change Log
+- Add prefix Dx to all types of interface Header file
+- fix the Move-to-Front decodec problem in JT 10 version. 
+
+
+### TODO
+- support multi-threaded loading
 - resolve the Move-to-Front decodec problem in JT 10 version. 
 
 

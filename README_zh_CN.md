@@ -26,9 +26,16 @@ OSG_DIR 变量有定义。
 
 项目 osgviewer_jt 仅为方便加载 jt文件用于测试。
 
+### 建议
+在 DxJtShape 类，建议采用 getTriangles() 接口一次获取该shape所包含的所有网格数据
 
-## TODO
-- 分析并修复 JT10版本里的 Move-to-Front 解码问题 (里边会出现-1，目前没有研究清楚此时取对应的哪一个值，会导致部分JT10的文件显示不正常)
+
+## Change Log
+- 将接口头文件各类，加前缀 Dx，目的是为了加大与 JtOpen 头文件的区分度
+- 解决 JT10 版本里边的 Move-to-Front 解码问题
+
+
+### TODO
 - 支持多线程加载
 - 增加 Primitive Set 解析
 - 了解 JT格式里 JT_PROP_NAME 的构件规则，确保带有Instance的装配可以正确写入(只影响JT格式写出)
