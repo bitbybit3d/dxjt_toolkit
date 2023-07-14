@@ -21,19 +21,8 @@ protected:
     DxJtAttrib();
 
 public:
+    DXJT_ENTITY_TYPEID_HEADER(DxJtAttrib);
 
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
 
     enum Scope
     {
@@ -52,19 +41,7 @@ protected:
     DxJtMaterial();
 
 public:
-
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
+    DXJT_ENTITY_TYPEID_HEADER(DxJtMaterial);
 
     virtual void setAmbientColor(const std::vector<float>& ambient) = 0;
     virtual void getAmbientColor(std::vector<float>& ambient) const = 0;
@@ -87,19 +64,8 @@ protected:
     DxJtTransform();
 
 public:
+    DXJT_ENTITY_TYPEID_HEADER(DxJtTransform);
 
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
 
     virtual void setTElements(const std::vector<double>& transf) = 0;
     virtual void getTElements(std::vector<double>& transf) const = 0;

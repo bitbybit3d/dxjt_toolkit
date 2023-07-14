@@ -27,18 +27,8 @@ protected:
 public:
     virtual ~DxJtHierarchy() {}
 
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
+    DXJT_ENTITY_TYPEID_HEADER(DxJtHierarchy);
+
 
     // Basic ID APIs
     virtual std::wstring name() const = 0;
@@ -88,18 +78,8 @@ protected:
     DxJtUnitHierarchy();
 
 public:
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
+    DXJT_ENTITY_TYPEID_HEADER(DxJtUnitHierarchy);
+
 
     enum JtkUnits
     {
@@ -141,20 +121,8 @@ protected:
     DxJtAssembly();
 
 public:
+    DXJT_ENTITY_TYPEID_HEADER(DxJtAssembly);
 
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
 
     /**
      * @brief Adds any JtHierarchy-derived object as a child of this assembly.
@@ -184,20 +152,8 @@ protected:
     DxJtPart();
 
 public:
+    DXJT_ENTITY_TYPEID_HEADER(DxJtPart);
 
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
 
     virtual int addPolyShape(std::shared_ptr<DxJtShape> shape, int LODNum = 0) = 0;
 
@@ -224,20 +180,7 @@ protected:
     DxJtInstance();
 
 public:
-
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
+    DXJT_ENTITY_TYPEID_HEADER(DxJtInstance);
 
     /**
      * @brief A pointer to the node being instanced.

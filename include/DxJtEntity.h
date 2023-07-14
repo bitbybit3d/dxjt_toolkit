@@ -7,8 +7,8 @@
 // EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, 
 // MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
 //////////////////////////////////////////////////////////////////////////////
-#ifndef __JT_TOOLKIT_ENTITY_H_
-#define __JT_TOOLKIT_ENTITY_H_
+#ifndef __DXJT_TOOLKIT_ENTITY_H_
+#define __DXJT_TOOLKIT_ENTITY_H_
 
 // Begin Microsoft Windows DLL support.
 #if defined(DXJTTOOLKIT_EXPORTS)
@@ -35,12 +35,11 @@
  */
 class JT_TOOLKIT_EXPORT DxJtEntity
 {
+    DxJtEntity(const DxJtEntity&) = delete;              // copy constructor
+    DxJtEntity& operator=(const DxJtEntity&) = delete;   // assignment operator
+
 protected:
     DxJtEntity();
-
-private:
-    DxJtEntity(const DxJtEntity&);              // copy constructor
-    DxJtEntity& operator=(const DxJtEntity&);   // assignment operator
 
 public:
     virtual ~DxJtEntity();
@@ -50,10 +49,11 @@ public:
         JtkENTITY,
         JtkHIERARCHY,
         JtkUNITHIERARCHY,
+        JtkATTRIB,
+        JtkPROPERTY,
         JtkASSEMBLY,
         JtkPART,
         JtkINSTANCE,
-        JtkATTRIB,
         JtkMATERIAL,
         JtkTRANSFORM,
         JtkSHAPE,
@@ -74,8 +74,11 @@ public:
     /**
      * @brief Return the typeId name for this instance.
      */
-    const wchar_t* typeIDName() const;
+    virtual const wchar_t* const typeIDName() const;
 
+    /**
+     * @brief Return true if instance is the type id.
+     */
     bool isOfType(TypeID id) const;
 
     /**
@@ -84,4 +87,31 @@ public:
     virtual bool isOfSubType(TypeID id) const;
 };
 
-#endif  // __JT_TOOLKIT_ENTITY_H_
+
+#define DXJT_ENTITY_TYPEID_HEADER(classname) \
+public: \
+    static TypeID classTypeID(); \
+    virtual TypeID typeID() const; \
+    virtual const wchar_t* const typeName() const; \
+    virtual bool isOfSubType(TypeID id) const; \
+
+
+
+#define DXJT_ENTITY_TYPEID_IMPLEMENT(classname, kTypeID, typeIDStr, baseclassname) \
+    DxJtEntity::TypeID classname::classTypeID() { \
+        return DxJtEntity::kTypeID; \
+    } \
+    DxJtEntity::TypeID classname::typeID() const {\
+        return DxJtEntity::kTypeID; \
+    } \
+    const wchar_t* const classname::typeName() const {\
+        return typeIDStr; \
+    } \
+    bool classname::isOfSubType(TypeID id) const {\
+        if (id == classname::classTypeID()) \
+            return true; \
+        return baseclassname::isOfSubType(id); \
+    } \
+
+
+#endif  // __DXJT_TOOLKIT_ENTITY_H_

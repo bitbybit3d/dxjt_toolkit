@@ -22,8 +22,8 @@ class JtTraverserPrivate;
 class JT_TOOLKIT_EXPORT DxJtTraverser
 {
 private:
-    DxJtTraverser(const DxJtTraverser&);
-    DxJtTraverser& operator=(const DxJtTraverser&);
+    DxJtTraverser(const DxJtTraverser&) = delete;
+    DxJtTraverser& operator=(const DxJtTraverser&) = delete;
 
 public:
     DxJtTraverser();

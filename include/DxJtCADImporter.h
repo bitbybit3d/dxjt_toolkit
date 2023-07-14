@@ -23,19 +23,8 @@ protected:
     DxJtCADImporter();
 
 public:
+    DXJT_ENTITY_TYPEID_HEADER(DxJtCADImporter);
 
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
 
     // Continue the export process normally.
     // Option to load tristrip/linestrip/polygon/point set data from the .jt file

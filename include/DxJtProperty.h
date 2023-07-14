@@ -21,19 +21,8 @@ protected:
     DxJtProperty();
 
 public:
+    DXJT_ENTITY_TYPEID_HEADER(DxJtProperty);
 
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
 
     enum SubType
     {

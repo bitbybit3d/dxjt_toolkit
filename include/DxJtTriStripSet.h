@@ -22,19 +22,7 @@ public:
     DxJtTriStripSet();
 
 public:
-
-    /**
-     * @brief Return the TypeID for class.
-     */
-    static TypeID classTypeID();
-    /**
-     * @brief Return the TypeID for instance.
-     */
-    virtual TypeID typeID() const;
-    /**
-     * @brief Return true if instance belong to the type id.
-     */
-    virtual bool isOfSubType(TypeID id) const;
+    DXJT_ENTITY_TYPEID_HEADER(DxJtTriStripSet);
 
 };
 
