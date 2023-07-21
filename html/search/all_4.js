@@ -1,20 +1,5 @@
 var searchData=
 [
-  ['jt_5ftoolkit_10',['jt_toolkit',['../index.html',1,'']]],
-  ['jtassembly_11',['JtAssembly',['../class_jt_assembly.html',1,'']]],
-  ['jtattrib_12',['JtAttrib',['../class_jt_attrib.html',1,'']]],
-  ['jtcadexporter_13',['JtCADExporter',['../class_jt_c_a_d_exporter.html',1,'']]],
-  ['jtcadimporter_14',['JtCADImporter',['../class_jt_c_a_d_importer.html',1,'']]],
-  ['jtentity_15',['JtEntity',['../class_jt_entity.html',1,'']]],
-  ['jtentityfactory_16',['JtEntityFactory',['../class_jt_entity_factory.html',1,'']]],
-  ['jthierarchy_17',['JtHierarchy',['../class_jt_hierarchy.html',1,'']]],
-  ['jtinstance_18',['JtInstance',['../class_jt_instance.html',1,'']]],
-  ['jtmaterial_19',['JtMaterial',['../class_jt_material.html',1,'']]],
-  ['jtpart_20',['JtPart',['../class_jt_part.html',1,'']]],
-  ['jtproperty_21',['JtProperty',['../class_jt_property.html',1,'']]],
-  ['jtshape_22',['JtShape',['../class_jt_shape.html',1,'']]],
-  ['jttransform_23',['JtTransform',['../class_jt_transform.html',1,'']]],
-  ['jttraverser_24',['JtTraverser',['../class_jt_traverser.html',1,'']]],
-  ['jttristripset_25',['JtTriStripSet',['../class_jt_tri_strip_set.html',1,'']]],
-  ['jtunithierarchy_26',['JtUnitHierarchy',['../class_jt_unit_hierarchy.html',1,'']]]
+  ['isofsubtype_26',['isOfSubType',['../class_dx_jt_entity.html#a9ba085191172c5601ad2e77455b027e3',1,'DxJtEntity']]],
+  ['isoftype_27',['isOfType',['../class_dx_jt_entity.html#a6779a297f6e909460e7f61148fc7237b',1,'DxJtEntity']]]
 ];

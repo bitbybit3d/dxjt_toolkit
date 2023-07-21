@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['traversegraph_72',['traverseGraph',['../class_jt_traverser.html#ad4b7e63ed2a02811e64f4589ebf041ad',1,'JtTraverser']]],
-  ['typeid_73',['typeID',['../class_jt_attrib.html#a7e6b8c49e347768e26fce3e13d63301e',1,'JtAttrib::typeID()'],['../class_jt_material.html#ad61f5bb20ec646f9d1c9e4f7c10d6a72',1,'JtMaterial::typeID()'],['../class_jt_transform.html#a0901813b36e31228ac61685b2b894e44',1,'JtTransform::typeID()'],['../class_jt_c_a_d_exporter.html#a3c3a4b9ec53ef7eea4dddad73ef5dc54',1,'JtCADExporter::typeID()'],['../class_jt_c_a_d_importer.html#a75c41c79fac79a6e8b9908c44b21f59e',1,'JtCADImporter::typeID()'],['../class_jt_entity.html#ad0a06387b0ea55eefd47bf1d402c2f35',1,'JtEntity::typeID()'],['../class_jt_hierarchy.html#ac6f6e29d168cc7d6d115e0e1437bdd52',1,'JtHierarchy::typeID()'],['../class_jt_unit_hierarchy.html#a2a3611484d5bb7302f3090297664e69c',1,'JtUnitHierarchy::typeID()'],['../class_jt_assembly.html#a24c863f8a00b448d9fd0f2edb043c780',1,'JtAssembly::typeID()'],['../class_jt_part.html#a7f736c8d590b07affa76c7b8a62f5e1f',1,'JtPart::typeID()'],['../class_jt_instance.html#a533277c9c3ce0ff97d1d1efa863d9a72',1,'JtInstance::typeID()'],['../class_jt_property.html#a58a3ee025e2f7fe1049f0aa1d5593f3f',1,'JtProperty::typeID()'],['../class_jt_shape.html#ac19445258873f657e85ceb05fcc1df1a',1,'JtShape::typeID()'],['../class_jt_tri_strip_set.html#ad5641b78aaa3964caa56ebecb008e61b',1,'JtTriStripSet::typeID()']]],
-  ['typeidname_74',['typeIDName',['../class_jt_entity.html#add276ccf6dc7b5892522a718068538e2',1,'JtEntity']]]
+  ['traversegraph_74',['traverseGraph',['../class_dx_jt_traverser.html#a56438124ebd88628486a870591a0593c',1,'DxJtTraverser']]],
+  ['typeid_75',['typeID',['../class_dx_jt_entity.html#a2e3a28bada9d49cb0bf1bb377a00f1bb',1,'DxJtEntity']]],
+  ['typeidname_76',['typeIDName',['../class_dx_jt_entity.html#af553801e4bad2152d4a5a4c267398352',1,'DxJtEntity']]]
 ];

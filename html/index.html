@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>jt_toolkit: jt_toolkit</title>
+<title>dxjt_toolkit: dxjt_toolkit</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">jt_toolkit
-   &#160;<span id="projectnumber">0.1dev</span>
+   <div id="projectname">dxjt_toolkit
+   &#160;<span id="projectnumber">0.4</span>
    </div>
   </td>
  </tr>
@@ -63,15 +63,15 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">jt_toolkit </div>  </div>
+<div class="title">dxjt_toolkit </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> 解析JT格式文件。</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 简介</h2>
-<p>在设计上分二层，其中 libdxjt.dll 贴近JT格式解码，而 jt_toolkit 则类比 JTOpen Toolkit 转换类似的组织形式。</p>
-<p>个人作品，底层实现 <b>libdxjt</b> 和 <b>jt_toolkit</b> 不开源，仅演示基于它们的用法与案例。</p>
-<p>jt_toolkit 依赖：</p><ul>
+<p>在设计上分二层，其中 libdxjt.dll 贴近JT格式解码，而 dxjt_toolkit 则类比 JTOpen Toolkit 转换类似的组织形式。</p>
+<p>个人作品，底层实现 <b>libdxjt</b> 和 <b>dxjt_toolkit</b> 不开源，仅演示基于它们的用法与案例。</p>
+<p>dxjt_toolkit 仅依赖：</p><ul>
 <li>zlib.dll</li>
 <li>liblzma.dll</li>
 </ul>
@@ -84,13 +84,20 @@ $(function() {
 <li>不支持解析 JT BREP Segment，更没法解析 XT BREP Segment</li>
 <li>暂时没有多线程读取能力，也并不应用延迟加载</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
-TODO</h2>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Change Log</h1>
 <ul>
-<li>分析并修复 JT10版本里的 Move-to-Front 解码问题 (里边会出现-1，没法确定此时应对应哪一个值)</li>
-<li>了解 JT格式里 JT_PROP_NAME 的构件规则，确保带有Instance的装配可以正确写入</li>
+<li>将接口头文件各类，加前缀 Dx，目的是为了加大与 JtOpen 头文件的区分度</li>
+<li>解决 JT10 版本里边的 Move-to-Front 解码问题</li>
+<li>修复读取某些JT文件时的错误问题</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md4"></a>
+TODO</h2>
+<ul>
+<li>了解 JT格式里 JT_PROP_NAME 的构件规则，确保带有Instance的装配可以正确写入</li>
+<li>多线程加载 JT 文件</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
 参考资源</h2>
 <ul>
 <li>JT-v8.1_File_Format_Reference.PDF</li>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['postactioncallback_33',['postActionCallback',['../class_jt_traverser.html#afee120f9b044709f5b1f7966c85d042a',1,'JtTraverser']]],
-  ['preactioncallback_34',['preActionCallback',['../class_jt_traverser.html#ae0771e50261f8477933651a73f249f1a',1,'JtTraverser']]]
+  ['postactioncallback_34',['postActionCallback',['../class_dx_jt_traverser.html#aba00b61fcc2ab386556760173d9a1086',1,'DxJtTraverser']]],
+  ['preactioncallback_35',['preActionCallback',['../class_dx_jt_traverser.html#ac1c74a8e81b6600dcadbd7625f489824',1,'DxJtTraverser']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getattrib_61',['getAttrib',['../class_jt_hierarchy.html#a01831e049854eb9ee03dc03990f68a74',1,'JtHierarchy::getAttrib()'],['../class_jt_shape.html#a26ff8dbfb0585d2d8900238ba2394508',1,'JtShape::getAttrib(int index) const =0']]],
-  ['gettriangles_62',['getTriangles',['../class_jt_shape.html#af347163c83e966377059f23affcb4643',1,'JtShape']]]
+  ['getattrib_62',['getAttrib',['../class_dx_jt_hierarchy.html#a43f76c2191659007420c1582190d45a3',1,'DxJtHierarchy::getAttrib()'],['../class_dx_jt_shape.html#a0eb66666049b430b636b77789b055924',1,'DxJtShape::getAttrib(int index) const =0']]],
+  ['gettriangles_63',['getTriangles',['../class_dx_jt_shape.html#ad5d5f8bec302bc5f0851e9ac641f0575',1,'DxJtShape']]]
 ];

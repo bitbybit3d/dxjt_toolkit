@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['original_69',['original',['../class_jt_instance.html#a3b33e3d9d30aa8f27e26fff675f41c78',1,'JtInstance']]]
+  ['original_71',['original',['../class_dx_jt_instance.html#a48aca8eb0648f0b2c80fbc27c3cad797',1,'DxJtInstance']]]
 ];

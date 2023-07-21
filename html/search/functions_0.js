@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['addattrib_54',['addAttrib',['../class_jt_hierarchy.html#ac514c57e69a2f70f1e3a80d82f802ae6',1,'JtHierarchy::addAttrib()'],['../class_jt_shape.html#a2341587ff56793d9a73ea86ccf1e7be6',1,'JtShape::addAttrib()']]],
-  ['addchild_55',['addChild',['../class_jt_assembly.html#a069cc78543006839ac18a063295e8694',1,'JtAssembly']]],
-  ['addprim_56',['addPrim',['../class_jt_shape.html#a727e03740fcf0c240a792b2cbc4ee04c',1,'JtShape']]]
+  ['addattrib_55',['addAttrib',['../class_dx_jt_hierarchy.html#a111b4607ed134f0157715bd1f059bca7',1,'DxJtHierarchy::addAttrib()'],['../class_dx_jt_shape.html#a829dc40492d815612642f3871c65b166',1,'DxJtShape::addAttrib()']]],
+  ['addchild_56',['addChild',['../class_dx_jt_assembly.html#aa87d4b866109f42f6e88b57cbb1ed70e',1,'DxJtAssembly']]],
+  ['addprim_57',['addPrim',['../class_dx_jt_shape.html#ac844e4ba9db26dd945ea6f9f8867aba1',1,'DxJtShape']]]
 ];
