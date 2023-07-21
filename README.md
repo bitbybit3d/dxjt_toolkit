@@ -1,19 +1,19 @@
-# jt_toolkit
+# dxjt_toolkit
 
 Author: bitbybit3d@163.com
 
-jt_toolkit is a C++ API library, it provides applications with the capablity to:
+dxjt_toolkit is a C++ API library, it provides applications with the capablity to:
 - read a JT file (JT 8.0 - JT 10.5 format)
 - write to a JT file (saved as JT 8.1 format)
 
 
 # Overview
-Personal works, the code for **libdxjt** and **jt_toolkit** is not free, only open source about usage and demonstration cases.
+Personal works, the code for **libdxjt** and **dxjt_toolkit** is not free, only open source about usage and demonstration cases.
 
-**libdxjt.dll** is used to parse JT format from file content, while **jt_toolkit** will create a similar assembly organization 
+**libdxjt.dll** is used to parse JT format from file content, while **dxjt_toolkit** will create a similar assembly organization 
 structure like JtOpen Toolkit do.
 
-jt_toolkit relies on libdxjt.dll, while libdxjt.dll relies on zlib.dll and liblzma.dll
+dxjt_toolkit relies on libdxjt.dll, while libdxjt.dll relies on zlib.dll and liblzma.dll
 
 
 ## 示例
@@ -33,7 +33,6 @@ A example for read JT file.
 
 ### TODO
 - support multi-threaded loading
-- resolve the Move-to-Front decodec problem in JT 10 version. 
 
 
 # References

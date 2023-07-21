@@ -1,18 +1,18 @@
-# jt_toolkit
+# dxjt_toolkit
 
 Author: bitbybit3d@163.com
 
-jt_toolkit 以C++ API形式，提供以下能力：
+dxjt_toolkit 以C++ API形式，提供以下能力：
 - 读取 JT 8.0 - JT 10.5格式 (限于LSG Segment、RangeLOD、Properties、Attributes等)
 - 以 JT8.1 个数输出至 JT 文件  (不带Instance的部件可以在Jt2Go正常打开)
 
 
 # 简介
-个人作品，底层实现 **libdxjt** 和 **jt_toolkit** 不开源，仅开源用法与演示案例。
+个人作品，底层实现 **libdxjt** 和 **dxjt_toolkit** 不开源，仅开源用法与演示案例。
 
-**libdxjt.dll** 为贴近JT格式解析文件内容，而 **jt_toolkit** 则类比 JTOpen Toolkit 转换成类似的装配组织结构。
+**libdxjt.dll** 为贴近JT格式解析文件内容，而 **dxjt_toolkit** 则类比 JTOpen Toolkit 转换成类似的装配组织结构。
 
-jt_toolkit 依赖 libdxjt.dll，而 libdxjt.dll 依赖 zlib.dll 和 liblzma.dll。
+dxjt_toolkit 依赖 libdxjt.dll，而 libdxjt.dll 依赖 zlib.dll 和 liblzma.dll。
 
 
 ## 示例
@@ -26,7 +26,11 @@ OSG_DIR 变量有定义。
 
 项目 osgviewer_jt 仅为方便加载 jt文件用于测试。
 
-### 建议
+### JtMFCViewer
+未提供源码，在发行版处可以找到，但其实只是 OpenSceneGraph 内的 MFC 范例，额外添加 osgdb_jt.dll 插件用于读取JT文件而已。
+
+
+## 重要建议
 在 DxJtShape 类，建议采用 getTriangles() 接口一次获取该shape所包含的所有网格数据
 
 
