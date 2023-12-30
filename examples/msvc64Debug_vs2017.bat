@@ -1,5 +1,5 @@
-set OSG_DIR=%~dp0..\..\..\contrib\openscenegraph\OpenSceneGraph-3.6.5-install\x64-Debug
-set OSG_3RDPARTY_DIR=%OSG_DIR%\..\..\3rdParty_small_v141
+set OSG_DIR=%~d0\sources\contrib\openscenegraph\OpenSceneGraph-3.6.5-install\x64-Debug
+set OSG_3RDPARTY_DIR=%OSG_DIR%\..\..\3rdParty_x64
 
 set PATH=%OSG_3RDPARTY_DIR%\x64\bin;%OSG_DIR%\bin;%PATH%
 
