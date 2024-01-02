@@ -179,6 +179,9 @@ bool ConvertJtLSGNode::preActionCallback(std::shared_ptr<DxJtHierarchy> CurrNode
 
 osg::Node* load_jt(const wchar_t *filename, const osgDB::ReaderWriter::Options* options)
 {
+    if (!DxJtEntityFactory::registerLicense())
+        return nullptr;
+
     std::shared_ptr<DxJtCADImporter> importer = DxJtEntityFactory::createCADImporter();
     if (importer == nullptr)
         return nullptr;

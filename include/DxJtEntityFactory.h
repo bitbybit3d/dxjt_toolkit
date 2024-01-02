@@ -27,6 +27,21 @@
 class JT_TOOLKIT_EXPORT DxJtEntityFactory
 {
 public:
+    enum LICENSE_HINT_TYPE
+    {
+        LICENSE_DLL_PATH,
+        LICENSE_DATA,
+    };
+    struct LicenseLoc
+    {
+        LICENSE_HINT_TYPE licenseHint;
+        char licenseData[1024];
+    };
+    /**
+     * @brief Register license.
+     */
+    static bool registerLicense(const LicenseLoc* licenseLocation = nullptr);
+
     /**
      * @brief Creates a new JtCADImporter object.
      */

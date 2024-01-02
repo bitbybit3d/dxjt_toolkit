@@ -27,6 +27,9 @@ int main(int argc, char* argv[])
     else
         fileName = "..\\..\\samples\\opening_protection_plate1_jt9.5.jt";
 
+    if (!DxJtEntityFactory::registerLicense())
+        return -1;
+
     wchar_t buf_wstr[_MAX_PATH];
     size_t numConverted = 0;
     size_t flen = strlen(fileName);
