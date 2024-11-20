@@ -16,7 +16,7 @@ structure like JtOpen Toolkit do.
 dxjt_toolkit relies on libdxjt.dll, while libdxjt.dll relies on zlib.dll and liblzma.dll
 
 
-## 示例
+## Example
 
 ### examples/traverse
 A example for read JT file.
@@ -32,6 +32,7 @@ A example for read JT file.
 
 
 ### TODO
+- add cmake support
 - support multi-threaded loading
 
 
