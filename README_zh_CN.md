@@ -14,6 +14,7 @@ dxjt_toolkit 以C++ API形式，提供以下能力：
 
 dxjt_toolkit 依赖 libdxjt.dll，而 libdxjt.dll 依赖 zlib.dll 和 liblzma.dll。
 
+项目状态：核心功能可用。本库尚未经过大规模生产测试，在关键业务流程使用前，请务必自行充分验证。
 
 ## 示例
 
