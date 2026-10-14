@@ -19,6 +19,12 @@ Status: Core functions are available. This library has not yet undergone large-s
 
 ## Example
 
+### bin/dxjtviewer
+dxjtviewer - a viewer for JT File
+
+Usage: `dxjtviewer <inputfile.jt> [options]`
+
+
 ### examples/traverse
 A example for read JT file.
 

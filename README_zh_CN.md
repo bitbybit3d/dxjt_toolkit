@@ -18,6 +18,12 @@ dxjt_toolkit 依赖 libdxjt.dll，而 libdxjt.dll 依赖 zlib.dll 和 liblzma.dl
 
 ## 示例
 
+### bin/dxjtviewer
+JT文件可视化查看器
+
+用法: `dxjtviewer <inputfile.jt> [options]`
+
+
 ### examples/traverse
 以控制台形式，打开JT文件，遍历查询它的内容
 
